@@ -1,0 +1,62 @@
+    #text_formatting {
+    text-align: center;
+    background-color: black;
+    font-family: "Roboto Slab", serif;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    border: 1px solid red;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.box{
+    width: 50px;
+    height: 50px;
+    background-color: lightcoral;
+    padding: 10px 20px 10px 20px;
+    margin: 10px;
+    border: 1px solid black;}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+
+.about {
+    background-color: white;
+    color: white;
+    padding: 40px;
+}
+
+
+.contact {
+    background-color: white;
+    padding: 40px;
+}
+
+
+input, textarea {
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
