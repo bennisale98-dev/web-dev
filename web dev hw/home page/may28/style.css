@@ -1,0 +1,30 @@
+.photos-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.photos-flex img {
+    width: 100%;
+    padding: 5px;
+}
+
+
+.photos-grid {
+    display: grid;
+}
+
+.photos-grid img {
+    width: 100%;
+    padding: 5px;
+}
+
+@media (min-width: 1025px) {
+
+    .photos-flex img {
+        width: 25%;
+    }
+
+    .photos-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
