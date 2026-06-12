@@ -1,12 +1,27 @@
+const searchbar = document.getElementById("searchbar");
+searchbar.addEventListener("input",(event)=>{
+    const searchtext = searchbar.value.toLowerCase();
+    const items = document.querySelectorAll(".search-item");
+    items.forEach(item => {
+        if (item.textContent.toLowerCase().includes(searchtext)) {
+            item.style.display = '';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+});
+const add_fruit = document.getElementById('add-btn');
 
+addButton.addEventListener("click", () => {
+    const fruitName = searchBar.value.trim();
 
+    if (fruitName === "") return;
 
-const add_fruit = document.getElementById('fruitbutton');
-console.log(add_fruit);
-add_fruit.addEventListener('click', () => {
-    console.log("fruit clicked");
-    const fruitList = document.getElementById('fruitlist');
-    const newFruit = document.createElement('li');
-    newFruit.textContent = 'Grape';
+    const newFruit = document.createElement("div");
+    newFruit.textContent = fruitName;
+    newFruit.classList.add("search-item");
+
     fruitList.appendChild(newFruit);
+
+    searchBar.value = "";
 });

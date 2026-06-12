@@ -5,7 +5,7 @@ title.textContent = 'Hello, DOM!';
 
 const changeTitleButton = document.getElementById('changeTitleButton');
 console.log(changeTitleButton);
-changeTitleButton.addEventListener('click', () => {
+changeTitleButton.addEventListener('click',  ()=> {
     console.log("Button clicked");
     title.textContent = 'Title Changed!';
 });
