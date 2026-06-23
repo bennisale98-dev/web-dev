@@ -1,27 +1,49 @@
-const searchbar = document.getElementById("searchbar");
-searchbar.addEventListener("input",(event)=>{
-    const searchtext = searchbar.value.toLowerCase();
-    const items = document.querySelectorAll(".search-item");
-    items.forEach(item => {
-        if (item.textContent.toLowerCase().includes(searchtext)) {
-            item.style.display = '';
-        } else {
-            item.style.display = 'none';
+function addFruit() {
+    const fruitName = document.getElementById("fruitInput").value;
+
+    if (fruitName.trim() === "") {
+        alert("Please enter a fruit name!");
+        return;
+    }
+
+    createFruitItem(fruitName);
+
+    document.getElementById("fruitInput").value = "";
+}
+
+function createFruitItem(fruitName) {
+    const li = document.createElement("li");
+
+    const fruitText = document.createElement("span");
+    fruitText.textContent = fruitName;
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "Edit";
+
+    editBtn.onclick = function () {
+        const newName = prompt("Enter new fruit name:", fruitText.textContent);
+
+        if (newName && newName.trim() !== "") {
+            fruitText.textContent = newName;
         }
-    });
-});
-const add_fruit = document.getElementById('add-btn');
+    };
 
-addButton.addEventListener("click", () => {
-    const fruitName = searchBar.value.trim();
 
-    if (fruitName === "") return;
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
 
-    const newFruit = document.createElement("div");
-    newFruit.textContent = fruitName;
-    newFruit.classList.add("search-item");
+    deleteBtn.onclick = function () {
+        li.remove();
+    };
 
-    fruitList.appendChild(newFruit);
+    li.appendChild(fruitText);
+    li.appendChild(editBtn);
+    li.appendChild(deleteBtn);
 
-    searchBar.value = "";
+    document.getElementById("fruitList").appendChild(li);
+}
+
+document.querySelectorAll("#fruitList li").forEach(item => {
+    const fruitName = item.textContent;
+    item.remove();
+    createFruitItem(fruitName);
 });
