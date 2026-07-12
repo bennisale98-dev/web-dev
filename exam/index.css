@@ -1,0 +1,12 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+#posts-list li{
+    margin-bottom: 12px;
+    padding: 10px;
+    border: 1px;
+    border-radius: 4px;
+
+}
